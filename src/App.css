@@ -1,0 +1,161 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #5b78927a; /* Light background color for the body */
+}
+
+.app {
+  text-align: center;
+  padding-top: 120px; /* Increased space for both navbars */
+}
+
+/* Top Navbar */
+.top-navbar {
+  background-color: rgba(98, 168, 168, 0.774); /* Semi-transparent background */
+  padding: 0.5rem 1rem;
+  position: fixed;
+  
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Higher z-index to ensure it’s on top */
+}
+
+/* Top Navbar Logo */
+.top-navbar img {
+  max-width: 90px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Top Navbar Links */
+.top-navbar .navbar-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.top-navbar .nav-item {
+  margin: 0.5rem;
+}
+
+.top-navbar .nav-link {
+  color: #000000; /* Text color for links */
+  text-decoration: none;
+}
+
+.top-navbar .nav-link:hover {
+  text-decoration: none; /* Remove underline on hover */
+  background-color: rgb(131, 89, 230); /* Background color change on hover */
+  color: #ffffff; /* Text color on hover */
+  border-color: #ddcccc00; /* Border color on hover */
+  border-radius: 10px; /* Rounded corners */
+  transform: scale(1.05); 
+}
+
+/* Secondary Navbar */
+.secondary-navbar {
+  background-color: #3d6ef3da; /* Semi-transparent background */
+  padding: 0px; /* Adjusted padding */
+  position: fixed;
+  width: 100%;
+ 
+  top: 75px; /* Adjust to sit below the top navbar */
+  left: 0;
+  z-index: 999; /* Slightly lower z-index than top-navbar */
+  transition: transform 0.3s ease; /* Smooth transition for toggle effect */
+}
+
+/* Secondary Navbar Links */
+.secondary-navbar .navbar-nav {
+  display: flex;
+  flex-direction: row; /* Display items in a row by default */
+  justify-content: center;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Hide overflow */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.secondary-navbar .nav-item {
+  margin: 0.25rem; /* Adjust spacing between items */
+}
+
+.secondary-navbar .nav-link {
+  color: #ffffff; /* Text color for links */
+  text-decoration: none;
+  padding: 0.5rem 0.75rem; /* Adjust padding */
+  margin: 0.25rem; /* Margin for spacing between buttons */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transition */
+  text-overflow: ellipsis; /* Ellipsis for overflowing text */
+  overflow: hidden; /* Hide overflowing text */
+}
+
+.secondary-navbar .nav-link:hover {
+  text-decoration: none; /* Remove underline on hover */
+  background-color: #0328facb; /* Background color on hover */
+  color: #f3f3f2; /* Text color on hover */
+  cursor: pointer; /* Pointer cursor on hover */
+  transform: scale(1.05); /* Slightly enlarge the button */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Main Content */
+main {
+  padding: 1rem;
+  margin-top: 120px; /* Space for both navbars */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .top-navbar .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .secondary-navbar {
+    top: 70px; /* Adjust if needed for proper spacing */
+  }
+
+  .secondary-navbar .navbar-nav {
+    flex-direction: row; /* Ensure items are in a row */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: space-between; /* Distribute items evenly */
+  }
+
+  .secondary-navbar .nav-item {
+    margin: 0.25rem; /* Adjust margin to fit items */
+  }
+}
+
+@media (max-width: 576px) {
+  .top-navbar .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .secondary-navbar {
+    top: 90px; /* Adjust to ensure proper spacing */
+  }
+
+  .secondary-navbar .navbar-nav {
+    flex-direction: row; /* Ensure items are in a row */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: flex-start; /* Align items to the start */
+    overflow-x: auto; /* Enable horizontal scrolling if necessary */
+  }
+
+  .secondary-navbar .nav-item {
+    margin: 0.25rem; /* Adjust margin to fit items */
+  }
+
+  .secondary-navbar .nav-link {
+    padding: 0.5rem 0.75rem; /* Adjust padding for small screens */
+    font-size: 0.9rem; /* Reduce font size */
+  }
+}
+
+/* JavaScript CSS */
+.secondary-navbar.toggled {
+  transform: translateY(50%); /* Move half the height down */
+}

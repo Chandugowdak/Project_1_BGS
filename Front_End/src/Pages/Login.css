@@ -1,0 +1,32 @@
+/* login.css */
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css";
+
+.login-container {
+  height: 100vh;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+}
+
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.login-box input {
+  height: 45px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.login-box button {
+  height: 45px;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+@media (max-width: 576px) {
+  .login-box {
+    margin: 20px;
+  }
+}

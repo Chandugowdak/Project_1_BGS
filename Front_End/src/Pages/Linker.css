@@ -1,0 +1,164 @@
+/* Primary Navbar */
+.top-navbar {
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */
+  padding: 14px 0;
+ 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.top-navbar .logo {
+  width: 120px; /* Adjust logo size */
+  height: auto;
+}
+
+.navbar-toggler {
+  border-color: #fff;
+}
+
+.navbar-toggler-icon {
+  background-color: #fff;
+}
+
+.navbar-nav .primary-link {
+  color: #ffffff !important;
+  font-size: 1.1rem;
+  padding: 12px 25px; /* Added padding to give more space around the link */
+  margin-right: 15px; /* Space between each item */
+  margin-left:15px;
+  transition: all 0.3s ease;
+  position: relative;
+ 
+
+}
+
+.navbar-nav .primary-link:hover {
+  color: #ffeb3b !important; /* Yellow text on hover */
+  background-color: rgba(255, 255, 255, 0.2); /* Subtle background */
+  border-radius: 5px;
+  transform: scale(1.05); /* Slight scaling effect on hover */
+  transition: transform 0.3s ease-in-out; /* Smooth scale animation */
+}
+
+/* Secondary Navbar */
+.secondary-navbar {
+  background-color: #343a40;
+  padding: 10px 0;
+}
+
+.secondary-navbar .navbar-nav {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.secondary-navbar .navbar-nav .secondary-link {
+  color: #fff !important;
+  font-size: 1rem;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.secondary-navbar .navbar-nav .secondary-link:hover {
+  color: #ffeb3b !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  transform: scale(1.05); /* Slight scaling effect */
+  transition: transform 0.3s ease-in-out; /* Smooth scale animation */
+}
+
+/* Flexbox Layout for Mobile */
+@media (max-width: 767px) {
+  .secondary-navbar .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .secondary-navbar .secondary-link {
+    font-size: 1rem;
+    padding: 8px 15px;
+    margin: 5px 0;
+    width: 100%; /* Full width for links */
+    text-align: center;
+  }
+
+  /* Adjust layout for trending sections on mobile */
+  .trending-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    padding: 15px 0;
+  }
+
+  .trending-item {
+    width: 45%; /* 2 items per row on mobile */
+    padding: 15px;
+    background-color: #ff7e5f;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 10px;
+  }
+
+  .trending-item:hover {
+    transform: scale(1.05); /* Hover effect */
+  }
+
+  /* Animation for trending items */
+  @keyframes slideInTrending {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .trending-item:nth-child(1) {
+    animation: slideInTrending 0.5s ease-out forwards;
+    animation-delay: 0s;
+  }
+
+  .trending-item:nth-child(2) {
+    animation: slideInTrending 0.5s ease-out forwards;
+    animation-delay: 0.1s;
+  }
+
+  .trending-item:nth-child(3) {
+    animation: slideInTrending 0.5s ease-out forwards;
+    animation-delay: 0.2s;
+  }
+
+  .trending-item:nth-child(4) {
+    animation: slideInTrending 0.5s ease-out forwards;
+    animation-delay: 0.3s;
+  }
+}
+
+/* Animation for Items */
+@keyframes slideIn {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile responsiveness for items */
+@media (min-width: 768px) {
+  .navbar-nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
